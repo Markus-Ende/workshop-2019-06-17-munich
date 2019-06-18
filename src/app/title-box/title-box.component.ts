@@ -14,9 +14,6 @@ import {
   styleUrls: ['./title-box.component.css']
 })
 export class TitleBoxComponent implements DoCheck {
-  ngDoCheck(): void {
-    console.log('doCHECK');
-  }
   @Input()
   title = 'initial';
 
@@ -25,5 +22,9 @@ export class TitleBoxComponent implements DoCheck {
 
   onTitleClick() {
     this.titleClick.emit('clicked');
+  }
+
+  ngDoCheck(): void {
+    console.log('doCHECK');
   }
 }
