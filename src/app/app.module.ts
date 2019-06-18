@@ -20,7 +20,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     TitleBoxComponent,
     PageNotFoundComponent
   ],
-  imports: [BrowserModule, BooksModule, AboutModule, AppRoutingModule],
+  imports: [BrowserModule, AboutModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })

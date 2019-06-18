@@ -9,6 +9,10 @@ const routes: Routes = [
     redirectTo: '/books'
   },
   {
+    path: 'books',
+    loadChildren: () => import('./books/books.module').then(m => m.BooksModule)
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   }
