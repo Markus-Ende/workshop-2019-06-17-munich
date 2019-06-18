@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Book } from './book-list/book';
+import { of, Observable } from 'rxjs';
+import { delay } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class BookDataService {
@@ -46,7 +49,10 @@ export class BookDataService {
     }
   ];
 
-  getBooks() {
-    return this.books;
+  getBooks(): Observable<Book[]> {
+    // return of(this.books).pipe(delay(5000));
+    return this.http.get<Book[]>('http://localhost:4730/books');
   }
+
+  constructor(private http: HttpClient) {}
 }

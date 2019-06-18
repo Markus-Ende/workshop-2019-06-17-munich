@@ -12,6 +12,12 @@ export class BookListComponent {
   books: Book[];
 
   constructor(private bookData: BookDataService) {
-    this.books = bookData.getBooks();
+    bookData
+      .getBooks()
+      .subscribe(
+        (books: Book[]) => (this.books = books),
+        error => console.error('ERROR', error),
+        () => console.log('completed')
+      );
   }
 }
