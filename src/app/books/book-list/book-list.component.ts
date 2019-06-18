@@ -1,5 +1,5 @@
 // tslint:disable: max-line-length
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BookDataService } from '../book-data.service';
 import { Book } from './book';
 
@@ -8,7 +8,7 @@ import { Book } from './book';
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.css']
 })
-export class BookListComponent {
+export class BookListComponent implements OnInit {
   books: Book[];
 
   constructor(private bookData: BookDataService) {
@@ -19,5 +19,9 @@ export class BookListComponent {
         error => console.error('ERROR', error),
         () => console.log('completed')
       );
+  }
+
+  ngOnInit(): void {
+    console.log('init');
   }
 }
