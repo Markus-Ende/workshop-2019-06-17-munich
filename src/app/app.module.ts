@@ -9,6 +9,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { InfoBoxComponent } from './info-box/info-box.component';
 import { MouseCursorComponent } from './mouse-cursor/mouse-cursor.component';
 import { TitleBoxComponent } from './title-box/title-box.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TitleBoxComponent } from './title-box/title-box.component';
     NavigationComponent,
     InfoBoxComponent,
     MouseCursorComponent,
-    TitleBoxComponent
+    TitleBoxComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
