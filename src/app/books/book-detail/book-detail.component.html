@@ -1,3 +1,6 @@
-<h2>{{ book.title }}</h2>
-<p>{{ book.abstract }}</p>
-<p>written by {{ book.author }}</p>
+<div *ngIf="book; else loading">
+  <h2>{{ book?.title }}</h2>
+  <p>{{ book?.abstract }}</p>
+  <p>written by {{ book?.author }}</p>
+</div>
+<ng-template #loading>spinner</ng-template>
