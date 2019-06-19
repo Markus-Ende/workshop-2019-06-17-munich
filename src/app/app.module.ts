@@ -10,6 +10,7 @@ import { InfoBoxComponent } from './info-box/info-box.component';
 import { MouseCursorComponent } from './mouse-cursor/mouse-cursor.component';
 import { TitleBoxComponent } from './title-box/title-box.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     TitleBoxComponent,
     PageNotFoundComponent
   ],
-  imports: [BrowserModule, AboutModule, AppRoutingModule],
+  imports: [BrowserModule, AboutModule, AppRoutingModule, SharedModule],
   providers: [],
   bootstrap: [AppComponent]
 })

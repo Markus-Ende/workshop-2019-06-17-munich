@@ -1,4 +1,7 @@
-<title-box [title]="title" (titleClick)="onTitleClick($event)"></title-box>
+<title-box
+  [title]="title | shout: 'test'"
+  (titleClick)="onTitleClick($event)"
+></title-box>
 
 <navigation></navigation>
 <div>
