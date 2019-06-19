@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Book } from '../book-list/book';
 import { BookDataService } from '../book-data.service';
 import { delay, concatMap, tap } from 'rxjs/operators';
-import { Subscription } from 'rxjs';
+import { Subscription, of } from 'rxjs';
 
 @Component({
   selector: 'book-detail',
