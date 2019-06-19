@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { BookDataService } from '../book-data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'book-new',
   templateUrl: './book-new.component.html',
   styleUrls: ['./book-new.component.css']
 })
-export class BookNewComponent implements OnInit {
+export class BookNewComponent implements OnInit, OnDestroy {
   form: FormGroup;
+  subscription = Subscription.EMPTY;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private booksService: BookDataService
+  ) {}
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -26,5 +32,12 @@ export class BookNewComponent implements OnInit {
 
   onSubmit() {
     console.log('submit', this.form.value);
+    this.subscription = this.booksService
+      .createBook({ ...this.form.value })
+      .subscribe();
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

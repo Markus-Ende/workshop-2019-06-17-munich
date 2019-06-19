@@ -1,7 +1,7 @@
 <div *ngIf="book; else loading">
   <h2>{{ book?.title }}</h2>
   <p>{{ book?.abstract }}</p>
-  <p>written by {{ book?.author }}</p>
+  <p>written by {{ book?.author ? book.author : 'unkown' }}</p>
 
   <a [routerLink]="['edit']">Edit</a>
 </div>

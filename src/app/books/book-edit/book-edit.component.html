@@ -1,4 +1,9 @@
-<form class="edit-form" #form="ngForm" (ngSubmit)="save(form.value)">
+<form
+  class="edit-form"
+  #form="ngForm"
+  (ngSubmit)="save(form.value)"
+  *ngIf="book"
+>
   <input
     type="text"
     [(ngModel)]="book.title"
