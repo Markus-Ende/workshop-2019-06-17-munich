@@ -7,7 +7,7 @@ import { Book } from '../book-list/book';
   styleUrls: ['./book-edit.component.css']
 })
 export class BookEditComponent implements OnInit {
-  book = {
+  book: Book = {
     title: 'My Title',
     abstract: 'My Abstract',
     author: 'My Author'
