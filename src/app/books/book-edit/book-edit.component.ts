@@ -8,10 +8,16 @@ import { Book } from '../book-list/book';
 })
 export class BookEditComponent implements OnInit {
   book = {
-    title: 'My Title'
+    title: 'My Title',
+    abstract: 'My Abstract',
+    author: 'My Author'
   } as Book;
 
   constructor() {}
 
   ngOnInit() {}
+
+  save(formValue: { title: string; abstract: string; author: string }) {
+    console.log('save', formValue);
+  }
 }
